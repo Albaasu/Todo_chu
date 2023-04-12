@@ -4,3 +4,5 @@ export type todos = {
   status: boolean;
   id: string;
 };
+
+export type FilterTypes = 'ALL' | 'INCOMPLETE' | 'COMPLETED';

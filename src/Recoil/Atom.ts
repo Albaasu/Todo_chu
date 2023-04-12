@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { todos } from '../Types/type';
+import { todos,FilterTypes } from '../Types/type';
 
 export const TodoTextState = atom<string>({
   key: 'TodoTextState',
@@ -13,4 +13,9 @@ export const TodoTextArea = atom<string>({
 export const TodoList = atom<todos[]>({
   key: 'TodoList',
   default: [],
+});
+
+export const todoFilterState = atom<FilterTypes>({
+  key: 'todoFilterState',
+  default: 'ALL'
 });

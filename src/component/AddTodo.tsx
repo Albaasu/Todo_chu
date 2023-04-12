@@ -7,7 +7,7 @@ import {
   Input,
   Textarea,
 } from '@chakra-ui/react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState} from 'recoil';
 import { TodoList, TodoTextArea, TodoTextState } from '../Recoil/Atom';
 import { todos } from '../Types/type';
 import { v4 as uuidv4 } from 'uuid';
@@ -18,22 +18,27 @@ function AddTodo() {
   const [todoTextArea, setTodoTextArea] = useRecoilState(TodoTextArea);
   const [todoList, setTodoList] = useRecoilState(TodoList);
 
+  
+
   const handleAddTodo = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (todoText === '') return;
     if (todoTextArea === '') return;
 
-    const Todos: todos = {
-      title: todoText,
-      detail: todoTextArea,
-      status: false,
-      id: uuidv4(),
-    };
-    const newList = [...todoList, Todos];
-    setTodoList(newList);
-    setTodoText('');
-    setTodoTextArea('');
 
+      const Todos: todos = {
+        title: todoText,
+        detail: todoTextArea,
+        status: false,
+        id: uuidv4(),
+      };
+      const newList = [...todoList, Todos];
+      setTodoList(newList);
+      setTodoText('');
+      setTodoTextArea('');  
+
+    
+    
     
   };
   return (
